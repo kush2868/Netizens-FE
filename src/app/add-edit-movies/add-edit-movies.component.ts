@@ -54,4 +54,8 @@ export class AddEditMoviesComponent implements OnInit {
     })
   }
 
+  back(){
+    this.router.navigate([""]);
+  }
+
 }

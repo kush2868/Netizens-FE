@@ -29,6 +29,7 @@
         <div class="col-md-12">
             <button *ngIf="!movieId" (click)="submitData()" class="btn">Submit</button>
             <button *ngIf="movieId" (click)="updateData()" class="btn">Update</button>
+            <button (click)="back()" class="btn">Back</button>
         </div>
 
     </div>
