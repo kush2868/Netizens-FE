@@ -1,6 +1,7 @@
 <div class="container">
     <div class="row">
         <h3>MOVIES LIST</h3>
+        <button (click)="addmovie()" style="margin-left: 1rem;" class="btn">Add</button>
     </div>
 
     <div class="row">
@@ -13,14 +14,14 @@
                 <td style="padding: 1rem;">Actions</td>
             </thead>
             <tbody>
-                <tr>
-                    <td style="padding: 1rem;">gjhk</td>
-                    <td style="padding: 1rem;">gjhk</td>
-                    <td style="padding: 1rem;">gjhk</td>
-                    <td style="padding: 1rem;">gjhk</td>
+                <tr *ngFor="let movie of moviesList;let i = index">
+                    <td style="padding: 1rem;">{{i+1}}</td>
+                    <td style="padding: 1rem;">{{movie.title}}</td>
+                    <td style="padding: 1rem;">{{movie.director}}</td>
+                    <td style="padding: 1rem;">{{movie.releaseYear}}</td>
                     <td style="padding: 1rem;display: flex;justify-content: space-between;">
-                        <img src="../../assets/pencil.png" alt="" height="20" width="20">
-                        <img src="../../assets/bin.png" alt="" height="20" width="20">
+                        <img (click)="editMovie(movie)" src="../../assets/pencil.png" alt="" height="20" width="20">
+                        <img (click)="deleteMovie(movie)" src="../../assets/bin.png" alt="" height="20" width="20">
                     </td>
                 </tr>
             </tbody>
